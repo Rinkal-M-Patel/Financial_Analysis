@@ -88,7 +88,15 @@ var finances = [
 ];
 
 // calculate total months
-
-
   var totoalMonths = finances.length;
-  console.log(totoalMonths)
+  console.log(totoalMonths);
+
+  //calculate total profit/loss
+  //How do I find the net total of Profit/Losses?
+  //Find the sum of the objects in the amounts column
+  var total=0
+  for(var i=0; i<finances.length;i++){
+    total += finances[i][1];
+    console.log("total: " + total);
+  }
+
