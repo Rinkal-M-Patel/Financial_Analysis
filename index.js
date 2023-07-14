@@ -88,8 +88,8 @@ var finances = [
 ];
 
 // calculate total months
-  var totoalMonths = finances.length;
-  console.log(totoalMonths);
+  var totalMonths = finances.length;
+  console.log(totalMonths);
 
   //calculate total profit/loss
   //How do I find the net total of Profit/Losses?
@@ -99,4 +99,16 @@ var finances = [
     total += finances[i][1];
     console.log("total: " + total);
   }
+
+  // claculate the average change
+var totalAvgChanges = 0;
+for (let i = 1; i < finances.length; i++){
+  var currentAmount = finances[i][1];
+          var previousAmount = finances[i - 1][1];
+
+  totalAvgChanges += currentAmount - previousAmount;
+    console.log(totalAvgChanges);
+}
+var averageChange = (totalAvgChanges / (finances.length - 1)).toFixed(2);
+console.log(averageChange);
 
