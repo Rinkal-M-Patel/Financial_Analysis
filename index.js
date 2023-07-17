@@ -91,13 +91,16 @@ var finances = [
   var totalMonths = finances.length;
   console.log(totalMonths);
 
-  //calculate total profit/loss
-  //How do I find the net total of Profit/Losses?
-  //Find the sum of the objects in the amounts column
+    //calculate total profit/loss
+   // How do I find the net total of Profit/Losses?
+   /* To calculate the total profit/loss, the code iterates over each item in the finances array, accesses the second
+    element (the profit/loss value) of each nested array, and adds it to the total variable. The cumulative total is logged to the 
+    console after each iteration. */
+
   var total=0
   for(var i=0; i<finances.length;i++){
     total += finances[i][1];
-    console.log("total: " + total);
+    //console.log("total: " + total);
   }
 
   // claculate the average change
@@ -107,10 +110,12 @@ for (let i = 1; i < finances.length; i++){
           var previousAmount = finances[i - 1][1];
 
   totalAvgChanges += currentAmount - previousAmount;
-    console.log(totalAvgChanges);
+    
 }
+
+// calculates the average change in profit/loss between consecutive months and stores it in the averageChange variable, rounded to two decimal places.
 var averageChange = (totalAvgChanges / (finances.length - 1)).toFixed(2);
-console.log(averageChange);
+
 
 
  // Find the greatest increase and decrease in profits
