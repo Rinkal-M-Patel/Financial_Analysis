@@ -112,3 +112,21 @@ for (let i = 1; i < finances.length; i++){
 var averageChange = (totalAvgChanges / (finances.length - 1)).toFixed(2);
 console.log(averageChange);
 
+
+// Find the greatest increase and decrease in profits
+var greatestIncrease = 0;
+var greatestDecrease = "";
+
+for(let i = 1; i < finances.length; i++){
+  let currentAmount = finances[i][1];
+  let previousAmount = finances[i - 1][1];
+  let change = currentAmount - previousAmount;
+
+  if (change > greatestIncrease) {
+    greatestIncrease[0] = finances[i][0];
+    greatestIncrease[1] = change;
+}
+}
+
+console.log(greatestIncrease);
+console.log(greatestDecrease);
