@@ -113,25 +113,34 @@ var averageChange = (totalAvgChanges / (finances.length - 1)).toFixed(2);
 console.log(averageChange);
 
 
-// Find the greatest increase and decrease in profits
-var greatestIncrease = 0;
-var greatestDecrease = "";
+ // Find the greatest increase and decrease in profits
+let greatestIncrease = 0;
+let greatestIncreaseMonth = "";
+let greatestDecrease = 0;
+let greatestDecreaseMonth = "";
 
-for(let i = 1; i < finances.length; i++){
+for(let i = 0; i < finances.length - 1; i++){
   let currentAmount = finances[i][1];
-  let previousAmount = finances[i - 1][1];
-  let change = currentAmount - previousAmount;
+  let nextAmount = finances[i + 1][1];
+  let change = nextAmount - currentAmount;
 
   if (change > greatestIncrease) {
-    greatestIncrease[0] = finances[i][0];
-    greatestIncrease[1] = change;
+    greatestIncrease = change;
+    greatestIncreaseMonth = finances[i + 1][0];
+  }
+
+  if (change < greatestDecrease) {
+    greatestDecrease = change;
+    greatestDecreaseMonth = finances[i + 1][0];
+  }
 }
 
-if (change < greatestDecrease) {
-  greatestDecrease[0] = finances[i][0];
-  greatestDecrease[1] = change;
-}
-}
 
-console.log(greatestIncrease);
-console.log(greatestDecrease);
+// Display the results
+console.log('Financial Analysis');
+console.log('----------------------------');
+console.log('Total Months:', totalMonths);
+console.log('Total: $' + total);
+console.log('Average Change: $' + averageChange);
+console.log('Greatest Increase in Profits:', greatestIncreaseMonth, '($' + greatestIncrease + ')');
+console.log('Greatest Decrease in Profits:', greatestDecreaseMonth, '($' + greatestDecrease + ')');
