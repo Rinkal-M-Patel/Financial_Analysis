@@ -25,7 +25,7 @@ Console Finances is a JavaScript application that allows you to manage your pers
 Use the available commands to add income, add expenses, view transactions, and perform other operations as needed.
 ## Screenshots
 
-![Console Finance](./images/data.png)
+![Console Finance](./images/data1.png)
 
 
 
