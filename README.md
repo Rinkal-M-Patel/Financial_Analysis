@@ -52,7 +52,7 @@ Use the available commands to add income, add expenses, view transactions, and p
 
 ## Demo
 
-Insert gif or link to demo
+https://rinkal-m-patel.github.io/Financial_Analysis/
 
 
 ## Run Locally
