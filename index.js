@@ -126,6 +126,11 @@ for(let i = 1; i < finances.length; i++){
     greatestIncrease[0] = finances[i][0];
     greatestIncrease[1] = change;
 }
+
+if (change < greatestDecrease) {
+  greatestDecrease[0] = finances[i][0];
+  greatestDecrease[1] = change;
+}
 }
 
 console.log(greatestIncrease);
